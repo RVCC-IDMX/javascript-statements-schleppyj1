@@ -19,7 +19,9 @@
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger
  */
 function isInteger(value) {
-  // Implementation goes here.
+  if (isInteger(value)) {
+    return true;
+  }
 }
 
 /**
@@ -30,7 +32,13 @@ function isInteger(value) {
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND
  */
 function logicalAnd(a, b) {
-  // Implementation goes here.
+  if (a && b) {
+    return true;
+  }
+
+  else {
+    return false;
+  }
 }
 
 /**
@@ -41,7 +49,13 @@ function logicalAnd(a, b) {
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR
  */
 function logicalOr(a, b) {
-  // Implementation goes here.
+  if (a || b) {
+    return true;
+  }
+
+  else {
+    return false;
+  }
 }
 
 /**
@@ -51,7 +65,13 @@ function logicalOr(a, b) {
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_NOT
  */
 function invertBoolean(bool) {
-  // Implementation goes here.
+  if (!(bool)) {
+    return true;
+  }
+
+  else {
+    return false;
+  }
 }
 
 /**
@@ -61,7 +81,7 @@ function invertBoolean(bool) {
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while
  */
 function countDigits(num) {
-  // Implementation goes here.
+  return Math.abs(num).toString().length;
 }
 
 /**
@@ -71,7 +91,14 @@ function countDigits(num) {
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while
  */
 function sumOfDigits(num) {
-  // Implementation goes here.
+  let sum = 0;
+  const numStr = Math.abs(num).toString();
+
+  for (let i = 0; i < numStr.length; i++) {
+    sum += parseInt(numStr[i]);
+  }
+
+  return sum;
 }
 
 /**
@@ -81,7 +108,11 @@ function sumOfDigits(num) {
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while
  */
 function reverseNumber(num) {
-  // Implementation goes here.
+  const numString = num.toString();
+  const reversedString = numString.split('').reverse().join('');
+  const reversedNum = parseInt(reversedString);
+
+  return reversedNum;
 }
 
 /**
@@ -93,7 +124,7 @@ function reverseNumber(num) {
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
  */
 function isWithinRange(num, min, max) {
-  // Implementation goes here.
+  return num >= min && num <= max;
 }
 
 // Export functions
